@@ -52,13 +52,13 @@ var TimeChosen = function( elements, options )
       {
         mString = ( m < 10 ? '0' + m : m);
         key = hString + ':' + mString + ' ' + amPm;
-        options.push('<option value="'+ key.replace(':','') +'">'+ key +'</option>');
+        options.push('<option value="'+ key +'">'+ key +'</option>');
       } // end minute loop
     
     } // end hour loop
 
     this.elements.html( options.join('') );
-    this.elements.chosen({search_contains: true, enable_split_word_search: true });
+    this.elements.chosen();
   }
 };
 
@@ -73,4 +73,3 @@ var TimeChosen = function( elements, options )
     return this;
   };
 })(jQuery);
-
