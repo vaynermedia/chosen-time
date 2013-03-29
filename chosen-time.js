@@ -1,10 +1,10 @@
-var TimeChosen = function( elements, options )
+var ChosenTime = function( elements, options )
 {
   this.elements = elements;
   this.options = jQuery.extend( this.defaults, options );
   this.attach();
 
-}; TimeChosen.prototype = {
+}; ChosenTime.prototype = {
 
   defaults: {
     hourFormat: 24
@@ -68,8 +68,8 @@ var TimeChosen = function( elements, options )
 //
 
 (function($) {
-  $.fn.timeChosen = function(args) {
-    new TimeChosen(this, args);
+  $.fn.chosenTime = function(args) {
+    new ChosenTime(this, args);
     return this;
   };
 })(jQuery);

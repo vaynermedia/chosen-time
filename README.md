@@ -7,7 +7,10 @@ for chosen.js to provide us with a way to select the time in as little as 2 keys
 Example:
 --
 
-`$('chzn-select').timeChosen();`
+```
+<select data-placeholder="Choose time..." class="chzn-time"></select>
+$('chzn-time').timeChosen();
+```
 
 .. that's it!
 
