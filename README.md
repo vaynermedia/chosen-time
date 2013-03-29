@@ -9,7 +9,7 @@ Example:
 
 ```
 <select data-placeholder="Choose time..." class="chzn-time"></select>
-$('chzn-time').timeChosen();
+$('chzn-time').chosenTime();
 ```
 
 .. that's it!
