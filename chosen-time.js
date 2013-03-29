@@ -16,7 +16,7 @@ var TimeChosen = function( elements, options )
   , attach: function( ) {
 
     //
-    // attachs the provided method $(this) element
+    // attachs this to $(this)
     //
 
     var options = [], key = '', value = ''
@@ -58,7 +58,7 @@ var TimeChosen = function( elements, options )
     } // end hour loop
 
     this.elements.html( options.join('') );
-    this.elements.chosen();
+    this.elements.chosen({search_contains: true, enable_split_word_search: true });
   }
 };
 
