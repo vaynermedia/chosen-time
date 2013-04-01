@@ -1,8 +1,8 @@
-var ChosenTime = function( elements, options )
+var ChosenTime = function( elements, args )
 {
   this.elements = elements;
-  this.options = jQuery.extend( this.defaults, options );
-  this.attach();
+  this.options = this.defaults; //jQuery.extend( this.defaults, options );
+  this.attach( args );
 
 }; ChosenTime.prototype = {
 
@@ -13,14 +13,17 @@ var ChosenTime = function( elements, options )
     , minuteArray: []
   }
 
-  , attach: function( ) {
+  , attach: function( args ) {
 
     //
-    // attachs this to $(this)
+    // attach to the current element(s).. akak $(this)
     //
 
     var options = [], key = '', value = ''
-      , mString = '', hString = '', amPm = '';
+      , mString = '', hString = '', amPm = ''
+      , selected = args.selected ? args.selected : ''
+      , selectedVal = ''
+    ;
     
     for( var h = 0; h < 24; h++ )
     {
@@ -52,7 +55,11 @@ var ChosenTime = function( elements, options )
       {
         mString = ( m < 10 ? '0' + m : m);
         key = hString + ':' + mString + ' ' + amPm;
-        options.push('<option value="'+ key +'">'+ key +'</option>');
+        value = ( h < 10 ? '0'+h : h) + ':' + mString;
+
+        selectedVal = value == selected ? ' selected' : ''
+
+        options.push('<option value="' + value + '"' + selectedVal + '>'+ key +'</option>');
       } // end minute loop
     
     } // end hour loop
