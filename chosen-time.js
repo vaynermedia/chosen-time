@@ -16,7 +16,7 @@ var ChosenTime = function( elements, args )
   , attach: function( args ) {
 
     //
-    // attach to the current element(s).. akak $(this)
+    // attachs this to $(this)
     //
 
     var options = [], key = '', value = ''
@@ -31,7 +31,7 @@ var ChosenTime = function( elements, args )
       switch( true )
       {
         case h == 0:
-          hString = 12
+          hString = 12; // midnight
           amPm = 'am';
           break;
         
@@ -42,7 +42,8 @@ var ChosenTime = function( elements, args )
 
         case h == 12:
           hString = 12;
-          amPm = 'pm'
+          amPm = 'pm';
+          break;
         
         case h < 24:
           hString = (h - 12);
